@@ -9,6 +9,7 @@ A permission layer for AI agent actions. Not a framework. Not a wallet. Just a g
 ## Problem
 
 AI agents can execute high-risk actions:
+
 - Shell commands
 - Browser automation
 - HTTP requests
@@ -81,7 +82,7 @@ type Decision =
 
 ## Architecture
 
-```
+```text
 Agent Runtime
      │
      ▼
@@ -107,7 +108,7 @@ Agent Runtime
 
 ## File structure
 
-```
+```text
 sam-guard/
 ├── README.md
 ├── PROJECT_BRIEF.md

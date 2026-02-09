@@ -15,6 +15,7 @@ It only answers one question:
 ## Why this exists
 
 Modern AI agents can:
+
 - run shell commands
 - control browsers
 - make HTTP requests
@@ -128,7 +129,7 @@ If one agent system disappears, Sam Guard still works.
 
 ## Project structure
 
-```
+```text
 /spec
   transaction-intent.md
 

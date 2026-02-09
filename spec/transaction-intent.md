@@ -41,7 +41,7 @@ A unique identifier for the agent making the request.
 The type of action being requested:
 
 | Tool | Description |
-|------|-------------|
+| --- | --- |
 | `exec` | Shell command execution |
 | `browser` | Browser automation (navigation, clicks, etc.) |
 | `http` | HTTP requests to external services |
@@ -52,7 +52,7 @@ The type of action being requested:
 The target of the action. Meaning depends on tool type:
 
 | Tool | Target Example |
-|------|----------------|
+| --- | --- |
 | `exec` | `"rm -rf /tmp/cache"` |
 | `browser` | `"https://bank.example.com/transfer"` |
 | `http` | `"https://api.stripe.com/v1/charges"` |
