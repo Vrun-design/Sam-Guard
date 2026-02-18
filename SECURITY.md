@@ -14,8 +14,6 @@ Security issues most relevant to this project:
 
 Please **do not** open a public GitHub issue for security vulnerabilities.
 
-Email: [your-email@example.com]
-
 Include:
 - Description of the vulnerability
 - Steps to reproduce
