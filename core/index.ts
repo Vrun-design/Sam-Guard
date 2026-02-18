@@ -1,10 +1,9 @@
 /**
- * Sam Guard - A permission layer for AI agent actions
+ * Sam Guard — A permission layer for AI agent actions.
  *
  * @packageDocumentation
  */
 
-// Core types
 export {
   TransactionIntent,
   ToolType,
@@ -23,16 +22,24 @@ export {
   requiresApproval,
 } from "./decision.js";
 
-// Gate
 export {
-  Gate,
-  GateConfig,
+  // Types
   Rule,
+  AsyncRule,
+  LogLevel,
   LogEntry,
+  GateConfig,
+  // Gate
+  Gate,
   createGate,
+  composeRules,
   // Built-in rules
   blockExec,
   blockSensitivePaths,
   requireApprovalForExternalHttp,
+  requireApprovalForExternalBrowser,
+  allowOnlyAgents,
+  blockAgents,
+  rateLimit,
   allowAll,
 } from "./gate.js";

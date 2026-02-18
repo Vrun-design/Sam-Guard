@@ -2,10 +2,7 @@
  * TransactionIntent represents a request from an agent to perform an action.
  * This is the core abstraction that Sam Guard evaluates.
  *
- * The intent is:
- * - Agent independent
- * - Framework neutral
- * - Easy to audit
+ * The intent is agent-independent, framework-neutral, and auditable.
  */
 export interface TransactionIntent {
   /** Unique identifier for the agent making the request */
@@ -34,7 +31,7 @@ export type ToolType = "exec" | "browser" | "http" | "write";
  * Optional metadata attached to an intent for audit purposes.
  */
 export interface IntentMetadata {
-  /** Timestamp when the intent was created */
+  /** Timestamp when the intent was created (Unix ms) */
   timestamp?: number;
 
   /** Optional session or conversation identifier */
@@ -46,6 +43,7 @@ export interface IntentMetadata {
 
 /**
  * Creates a new TransactionIntent with defaults applied.
+ * Validates required fields — throws if agentId or target are empty.
  */
 export function createIntent(
   agentId: string,
@@ -54,10 +52,17 @@ export function createIntent(
   payload?: unknown,
   metadata?: IntentMetadata
 ): TransactionIntent {
+  if (!agentId || agentId.trim() === "") {
+    throw new Error("createIntent: agentId must not be empty");
+  }
+  if (!target || target.trim() === "") {
+    throw new Error("createIntent: target must not be empty");
+  }
+
   return {
-    agentId,
+    agentId: agentId.trim(),
     tool,
-    target,
+    target: target.trim(),
     payload,
     metadata: {
       timestamp: Date.now(),

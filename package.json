@@ -1,25 +1,65 @@
 {
   "name": "sam-guard",
-  "version": "0.1.0",
-  "description": "A permission layer for AI agent actions",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "0.2.1",
+  "description": "A permission layer for AI agent actions. Not a framework. Not a wallet. Just a gate.",
+  "main": "./dist/core/index.js",
+  "types": "./dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/core/index.js",
+      "require": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    },
+    "./testing": {
+      "import": "./dist/core/testing.js",
+      "require": "./dist/core/testing.js",
+      "types": "./dist/core/testing.d.ts"
+    }
+  },
+  "files": [
+    "dist/core",
+    "spec",
+    "adapters",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "node --test dist/**/*.test.js",
-    "clean": "rm -rf dist"
+    "test": "node --test dist/core/**/*.test.js",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "ai",
     "agent",
     "permission",
     "gate",
-    "security"
+    "security",
+    "mcp",
+    "a2a",
+    "openclaw",
+    "langchain",
+    "llm",
+    "safety",
+    "typescript"
   ],
-  "author": "",
+  "author": "Varun",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vrun-design/Sam-Guard.git"
+  },
+  "homepage": "https://github.com/Vrun-design/Sam-Guard#readme",
+  "bugs": {
+    "url": "https://github.com/Vrun-design/Sam-Guard/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
+    "@types/node": "^25.2.3",
     "typescript": "^5.3.0"
   }
 }
