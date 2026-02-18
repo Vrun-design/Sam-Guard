@@ -2,6 +2,8 @@
 
 **A permission layer for AI agent actions.**
 
+<img src="./public/1.jpeg" alt="Sam Guard — A permission layer for AI agent actions" width="100%" />
+
 [![CI](https://github.com/Vrun-design/Sam-Guard/actions/workflows/ci.yml/badge.svg)](https://github.com/Vrun-design/Sam-Guard/actions)
 [![npm](https://img.shields.io/npm/v/sam-guard)](https://www.npmjs.com/package/sam-guard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -80,6 +82,8 @@ switch (decision.type) {
 
 ---
 
+<img src="./public/2.jpeg" alt="How Sam Guard works — flow diagram" width="100%" />
+
 ## Core concepts
 
 ### TransactionIntent
@@ -137,6 +141,8 @@ const gate = createGate(rules, {
 If a rule throws an error, the gate **fails closed** — it blocks the action rather than crashing.
 
 ---
+
+<img src="./public/3.jpeg" alt="Sam Guard built-in rules" width="100%" />
 
 ## Built-in rules
 
@@ -286,6 +292,8 @@ assertGateBlocks(gate, createIntent("agent", "exec", "ls"));
 Available helpers: `assertBlocks`, `assertAllows`, `assertRequiresApproval`, `assertPassesThrough`, `assertGateBlocks`, `assertGateAllows`, `assertGateRequiresApproval`, `assertDecision`.
 
 ---
+
+<img src="./public/4.jpeg" alt="Sam Guard adapter ecosystem" width="100%" />
 
 ## Adapters
 
