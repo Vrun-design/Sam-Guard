@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "node --test dist/core/**/*.test.js",
+    "test": "node --test $(find dist/core -name '*.test.js' | tr '\\n' ' ')",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build"
   },
