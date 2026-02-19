@@ -49,7 +49,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vrun-design/Sam-Guard.git"
+    "url": "git+https://github.com/Vrun-design/Sam-Guard.git"
   },
   "homepage": "https://github.com/Vrun-design/Sam-Guard#readme",
   "bugs": {
